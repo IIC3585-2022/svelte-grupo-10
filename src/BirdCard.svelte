@@ -1,0 +1,24 @@
+<script>
+  export let bird;
+</script>
+
+<div class={$$props.class} key={bird.uid}>
+  <header class="card-header">
+    <p class="card-header-title is-centered">
+      {bird.name.spanish}
+    </p>
+  </header>
+  <div class="card-image is-clickable">
+    <figure class="image is-square">
+      <img src={bird.images.full} alt="pájaro" />
+    </figure>
+  </div>
+  <footer class="card-footer">
+    <div class="card-footer-item notification is-success is-clickable">
+      <p class="title is-6">Agregar a Favoritos</p>
+    </div>
+  </footer>
+</div>
+
+<style>
+</style>
