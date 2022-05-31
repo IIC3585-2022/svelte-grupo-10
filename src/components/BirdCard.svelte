@@ -1,5 +1,6 @@
 <script>
   export let bird;
+  import { navigate } from "svelte-navigator";
 </script>
 
 <div class={$$props.class} key={bird.uid}>
@@ -8,7 +9,10 @@
       {bird.name.spanish}
     </p>
   </header>
-  <div class="card-image is-clickable">
+  <div
+    class="card-image is-clickable"
+    on:click={() => navigate(`/${bird.uid}`)}
+  >
     <figure class="image is-square">
       <img src={bird.images.full} alt="pájaro" />
     </figure>

@@ -6,6 +6,12 @@ export const fetchBirds = () =>
     url: "https://aves.ninjas.cl/api/birds",
   });
 
+  export const fetchBird = (uid) => {
+    return axios.request({
+      method: "GET",
+      url: `https://aves.ninjas.cl/api/birds/${uid}`,
+    });
+  }
 
 export const birdsDummies = [
   {

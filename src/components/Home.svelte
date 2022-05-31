@@ -1,9 +1,8 @@
 <script>
-  import { fetchBirds, birdsDummies } from "./api/index";
+  import { fetchBirds, birdsDummies } from "../api/index";
   import Birds from "./Birds.svelte";
   //let birdsRequest = fetchBirds();
   let birdsRequest = Promise.resolve({ data: birdsDummies });
-  birdsRequest.then((res) => console.log(res));
 </script>
 
 <div class="container is-fluid main">
