@@ -4,9 +4,21 @@
 </script>
 
 <div class="birds">
-  {#each birds as bird}
+  <!-- {#each birds as bird}
     <BirdCard {bird} class="card box" />
-  {/each}
+  {/each} -->
+  <section class="section">
+
+    <div class="columns is-multiline is-mobile">
+      {#each birds as bird}
+      <div class="column is-one-quarter">
+        <code>  <BirdCard {bird} class="card box" /></code>
+      </div>
+      {/each} 
+    </div>
+
+ </section>
+  
 </div>
 
 <style>
