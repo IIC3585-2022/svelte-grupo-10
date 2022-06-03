@@ -3,8 +3,10 @@
 // Update cache names any time any of the cached files change.
 const CACHE_NAME = 'static-cache-v1';
 
+const DYNAMIC_CACHE_NAME = 'dynamic-birds';
 // Add list of files to cache here.
 const FILES_TO_CACHE = [
+  './',
   '/offline.html',
 ];
 
@@ -38,9 +40,34 @@ self.addEventListener('activate', (evt) => {
   self.clients.claim();
 });
 
+async function cacheData(request) {
+  const cachedResponse = await caches.match(request);
+  return cachedResponse || fetch(request);
+}
+
+async function networkFirst(request) {
+  const cache = await caches.open(DYNAMIC_CACHE_NAME);
+
+  try {
+      const response = await fetch(request);
+      cache.put(request, response.clone());
+      return response;
+  } catch (error){
+      return await cache.match(request);
+
+  }
+
+}
+
 self.addEventListener('fetch', (evt) => {
-  console.log('[ServiceWorker] Fetch', evt.request.url);
-  // Add fetch event handler here.
+  const {request} = evt;
+  console.log('[ServiceWorker] Fetch', request.url);
+    const url = new URL(request.url);
+    if(url.origin === location.origin) {
+        evt.respondWith(cacheData(request));
+    } else {
+        evt.respondWith(networkFirst(request));
+    }
   if (evt.request.mode !== 'navigate') {
     // Not a page navigation, bail.
     return;
