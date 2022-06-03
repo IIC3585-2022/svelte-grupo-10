@@ -19,16 +19,16 @@
   </div>
   <footer class="card-footer">
     <div class="card-footer-item notification is-success is-clickable">
-      <p class="title is-6">Agregar a Favoritos   </p>
-      <div class="container">
-      <p class="button is-medium is-danger">
-        <span class="icon">
-          <i class="fa-solid fa-heart"></i>
-        </span>
-      </p>
+      <span class="icon">
+        <i class="fas fa-light fa-heart" />
+      </span>
     </div>
-    </footer>
+  </footer>
 </div>
 
 <style>
+  .card-header {
+    min-height: 4.5rem;
+    background-color: #92daba;
+  }
 </style>
