@@ -29,4 +29,7 @@
   nav {
     background-color: #92daba;
   }
+  .navbar-burger {
+    margin-left: 0;
+  }
 </style>
