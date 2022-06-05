@@ -7,7 +7,7 @@
 </script>
 
 <div class="container">
-  <h1 class="title">Pajaros de Chile</h1>
+  <h1 class="title">Aves de Chile</h1>
   <p class="search control has-icons-left has-icons-right">
     <input
       class="input"
