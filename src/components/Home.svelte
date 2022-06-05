@@ -6,9 +6,9 @@
   let query = "";
 </script>
 
-<div>
+<div class="container">
   <h1 class="title">Pajaros de Chile</h1>
-  <p class="control has-icons-left has-icons-right">
+  <p class="search control has-icons-left has-icons-right">
     <input
       class="input"
       type="text"
@@ -31,5 +31,8 @@
 <style>
   .title {
     text-align: center;
+  }
+  .container {
+    margin-top: 3rem;
   }
 </style>

@@ -9,18 +9,16 @@
   export let navigate;
 </script>
 
-<div>
-  <section class="hero is-medium is-success">
+<div class="container">
+  <section class="hero is-small is-success">
     <div class="hero-body">
-      <div class="container has-text-centered">
-        {#await birdReq}
-          <p>...cargando</p>
-        {:then bird}
-          <header><p class="title">{bird.data.name.spanish}</p></header>
-        {:catch error}
-          <div class="notificaion is-danger">{error}</div>
-        {/await}
-      </div>
+      {#await birdReq}
+        <p>...cargando</p>
+      {:then bird}
+        <header><p class="title">{bird.data.name.spanish}</p></header>
+      {:catch error}
+        <div class="notificaion is-danger">{error}</div>
+      {/await}
     </div>
   </section>
 
@@ -79,3 +77,12 @@
     </div>
   </section>
 </div>
+
+<style>
+  .container {
+    margin-top: 3rem;
+  }
+  .hero-body {
+    text-align: center;
+  }
+</style>
