@@ -1,38 +1,34 @@
 <script>
-    import { Router, Route, Link } from "svelte-navigator";
-	import Home from "./Home.svelte";
-	import Favorites from "./Favorites.svelte";
-	
-	export let menu = 1;
+  let active = false;
 </script>
 
-<style>
-	ul#menu li{
-		display : inline;
-	}
-</style>
-
-
-<div class="container">
-    <div class="navbar-brand">
-    <a href="/" class="navbar-item">
-        <h1 class="is-size-4">Pajaros de Chile
-        </h1>
+<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <!-- svelte-ignore a11y-missing-attribute -->
+    <p class="navbar-item">Aves de Chile</p>
+    <!-- svelte-ignore a11y-missing-attribute -->
+    <a
+      role="button"
+      class="navbar-burger"
+      aria-label="menu"
+      aria-expanded="false"
+      on:click={() => (active = !active)}
+    >
+      <span aria-hidden="true" />
+      <span aria-hidden="true" />
+      <span aria-hidden="true" />
     </a>
-    <a role="button" class="navbar-burger" aria-label="menu" data-target="collapse" >
-        <span aria-hidden="true" />
-        
-        <span aria-hidden="true" />
-        <span aria-hidden="true" />
-      </a>
+  </div>
+  <div class={`navbar-menu ${active ? "is-active" : ""}`}>
+    <div class="navbar-start">
+      <a class="navbar-item" href="/"> Inicio </a>
+      <a class="navbar-item" href="/favorites"> Favoritos </a>
     </div>
-    <div id="collapse" class="navbar-menu is-paddingless">
-    <nav class="navbar-end">
-        <Link to="/" class="navbar-item">Home</Link>
-        <Link to="favorites" class="navbar-item">Favorites</Link>
-    </nav>
-    </div>
-</div>
+  </div>
+</nav>
 
-
-
+<style>
+  nav {
+    background-color: #92daba;
+  }
+</style>
