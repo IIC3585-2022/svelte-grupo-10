@@ -27,8 +27,3 @@
   {/await}
 </div>
 
-<style>
-  .title {
-    text-align: center;
-  }
-</style>

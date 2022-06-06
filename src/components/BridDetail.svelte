@@ -5,8 +5,7 @@
   export let uid;
   //const params = useParams();
   let birdReq = fetchBird(uid);
-  export let location;
-  export let navigate;
+
 </script>
 
 <div>
