@@ -1,6 +1,15 @@
 <script>
   export let bird;
   import { navigate } from "svelte-navigator";
+
+  import {store} from "../stores/store.js"
+
+    const addToArray = (item) => {
+      console.log(item)
+		$store = [...$store, {
+			item
+		}];
+	};
 </script>
 
 <div class={$$props.class} key={bird.uid}>
@@ -18,7 +27,7 @@
     </figure>
   </div>
   <footer class="card-footer">
-    <div class="card-footer-item notification is-success is-clickable">
+    <div class="card-footer-item notification is-success is-clickable" on:click={addToArray(bird)}>
       <span class="icon">
         <i class="fas fa-light fa-heart" />
       </span>
