@@ -5,7 +5,7 @@
 <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <!-- svelte-ignore a11y-missing-attribute -->
-    <p class="navbar-item">Aves de Chile</p>
+    <a class="navbar-item" href="/">Aves de Chile</a>
     <!-- svelte-ignore a11y-missing-attribute -->
     <a
       role="button"
