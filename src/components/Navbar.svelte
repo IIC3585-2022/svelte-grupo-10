@@ -1,5 +1,13 @@
 <script>
   let active = false;
+  import { menu } from "../stores/store.js";
+  import { navigate } from "svelte-navigator";
+
+  const editMenu = (item) => {
+  console.log("menu aaa")
+    $menu = item;
+  };
+
 </script>
 
 <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
@@ -20,10 +28,20 @@
     </a>
   </div>
   <div class={`navbar-menu ${active ? "is-active" : ""}`}>
-    <div class="navbar-start">
-      <a class="navbar-item" href="/"> Inicio </a>
-      <a class="navbar-item" href="/favorites"> Favoritos </a>
-    </div>
+      <p
+        class="navbar-item is-clickable"
+        on:click={() => {
+          editMenu(0)
+          navigate(`/`);
+          }}
+      >Inicio</p>
+      <p
+        class="navbar-item is-clickable"
+        on:click={() => {
+          editMenu(1)
+          navigate(`/`);
+}}
+      >Favoritos</p>
   </div>
 </nav>
 

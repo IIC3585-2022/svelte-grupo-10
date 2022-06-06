@@ -2,7 +2,7 @@
   export let bird;
   import { navigate } from "svelte-navigator";
 
-  import { store } from "../stores/store.js";
+  import { store, menu } from "../stores/store.js";
 
   const addToArray = (item) => {
     console.log(item);
@@ -23,6 +23,18 @@
       if (value.item.uid != toRemove.uid) return value;
     });
   }
+
+  let countValue;
+
+  menu.subscribe(value => {
+    countValue = value;
+  });
+  const editMenu = (item) => {
+  console.log("menu aaa")
+    $menu = item;
+  };
+
+
 </script>
 
 <div class={$$props.class} key={bird.uid}>
@@ -33,7 +45,10 @@
   </header>
   <div
     class="card-image is-clickable"
-    on:click={() => navigate(`/${bird.uid}`)}
+    on:click={() => {
+      editMenu(2);
+      navigate(`/${bird.uid}`);
+      }}
   >
     <figure class="image is-square">
       <img src={bird.images.full} alt="pájaro" />
