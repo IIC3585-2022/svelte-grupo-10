@@ -4,7 +4,6 @@
   import BirdDetail from "../components/BridDetail.svelte";
   import Favorites from "../components/Favorites.svelte";
   import Navbar from "../components/Navbar.svelte";
-
 </script>
 
 <div>
