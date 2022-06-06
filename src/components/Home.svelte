@@ -7,7 +7,6 @@
 </script>
 
 <div>
-  <h1 class="title">Pajaros de Chile</h1>
   <p class="control has-icons-left has-icons-right">
     <input
       class="input"
@@ -28,8 +27,3 @@
   {/await}
 </div>
 
-<style>
-  .title {
-    text-align: center;
-  }
-</style>
